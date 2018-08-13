@@ -1,0 +1,2 @@
+class ElephantController < ApplicationController
+end
