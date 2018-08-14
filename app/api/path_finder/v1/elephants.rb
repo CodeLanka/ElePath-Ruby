@@ -17,7 +17,27 @@ module V1
          elephant = Elephant.find(params[:id])
          present elephant, with: Entities::Elephant
         end
+
+        resource :location do
+          desc 'Create a Location.'
+          params do
+             requires :location, type: Hash do
+               requires :date, type: DateTime, desc: 'Location date'
+               requires :latitude, type: Float, desc: 'latitude of the location.'
+               requires :longitude, type: Float, desc: 'longitude of the location'
+               requires :user, type: User, desc: 'User ID'
+
+             end
+          end
+          post do
+             elephant = Elephant.find(params[:id])
+             location = Location.new(params[:flow])
+             location = elephant.location.create!(params[:flow])
+          end
+        end
+      
       end
+
     end
   end
 end
