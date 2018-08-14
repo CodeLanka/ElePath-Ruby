@@ -25,8 +25,25 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production:
-  <<: *default
-  adapter: mysql2
 
-  database: db/production.sqlite3
+production:
+  adapter: mysql2
+  timezone: JST
+  reconnect: true
+  database: <%= ENV['DB_NAME'] %>
+  encoding: utf8
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  pool: 25
+
+localdocker:
+  adapter:  mysql2
+  username: root
+  password:
+  timezone: SGT
+  reconnect: true
+  database: elepath_db
+  encoding: utf8
+  host:     db
+
