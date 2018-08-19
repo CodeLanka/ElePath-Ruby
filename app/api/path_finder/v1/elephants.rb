@@ -17,7 +17,22 @@ module V1
          elephant = Elephant.find(params[:id])
          present elephant, with: Entities::Elephant
         end
+
+        resource :location do
+
+
+          desc 'Get all locations of specific Elephant'
+          params do
+          end
+          get do
+
+              location = Location.where('elephant_id LIKE :id ', id: params[:id])
+              present location, with: Entities::Location
+          end
+        end
+      
       end
+
     end
   end
 end
