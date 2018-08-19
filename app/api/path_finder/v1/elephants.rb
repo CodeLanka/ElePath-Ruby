@@ -19,20 +19,15 @@ module V1
         end
 
         resource :location do
-          desc 'Create a Location.'
-          params do
-             requires :location, type: Hash do
-               requires :date, type: DateTime, desc: 'Location date'
-               requires :latitude, type: Float, desc: 'latitude of the location.'
-               requires :longitude, type: Float, desc: 'longitude of the location'
-               requires :user, type: User, desc: 'User ID'
 
-             end
+
+          desc 'Get all locations of specific Elephant'
+          params do
           end
-          post do
-             elephant = Elephant.find(params[:id])
-             location = Location.new(params[:flow])
-             location = elephant.location.create!(params[:flow])
+          get do
+
+              location = Location.where('elephant_id LIKE :id ', id: params[:id])
+              present location, with: Entities::Location
           end
         end
       
