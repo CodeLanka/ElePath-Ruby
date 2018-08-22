@@ -40,11 +40,13 @@ module V1
              present :location, @location
           end
 
+
           desc 'Get all locations of specific Elephant'
           params do
           end
           get do
               location = Location.where('elephant_id = :id ', id: params[:id])
+
               present location, with: Entities::Location
           end
         end
