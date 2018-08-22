@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - '3307:3306'
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
+  app:
+    build: .
+    volumes:
+      - ./:/myapp
+    ports:
+      - '4000:3000'
+    depends_on:
+      - db
+    environment:
+      - RACK_ENV=localdocker
+
