@@ -21,16 +21,23 @@ module V1
         resource :location do
           desc 'Create a Location.'
           params do
+            requires :location, type: Hash do
                requires :date, type: DateTime, desc: 'Location date'
                requires :latitude, type: Float, desc: 'latitude of the location.'
                requires :longitude, type: Float, desc: 'longitude of the location'
                requires :user_id, type: Integer, desc: 'User ID'
-
+            end
           end
           post do
-             location = Location.create!({date: params[:date], latitude: params[:latitude], longitude: params[:longitude], elephant_id: params[:id],  user_id: params[:user_id]})
+
+             @elephant = Elephant.find(params[:id])
+             @location = Location.new(params[:location])
+             @location = @elephant.location.create!(params[:location])
+             #@elephant.update(stock: @location.newStock)
+
+             #location = Location.create!({date: params[:date], latitude: params[:latitude], longitude: params[:longitude], elephant_id: params[:id],  user_id: params[:user_id]})
              present :status, 201
-             present :location, location
+             present :location, @location
           end
 
           desc 'Get all locations of specific Elephant'
