@@ -30,14 +30,11 @@ module V1
           end
           post do
 
-             @elephant = Elephant.find(params[:id])
-             @location = Location.new(params[:location])
-             @location = @elephant.location.create!(params[:location])
-             #@elephant.update(stock: @location.newStock)
-
-             #location = Location.create!({date: params[:date], latitude: params[:latitude], longitude: params[:longitude], elephant_id: params[:id],  user_id: params[:user_id]})
+             elephant = Elephant.find(params[:id])
+             location = Location.new(params[:location])
+             location = elephant.location.create!(params[:location])
              present :status, 201
-             present :location, @location
+             present :location, location
           end
 
           desc 'Get all locations of specific Elephant'
