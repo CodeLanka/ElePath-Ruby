@@ -37,6 +37,7 @@ module V1
              present :location, location
           end
 
+
           desc 'Get all locations of specific Elephant'
           params do
           end
