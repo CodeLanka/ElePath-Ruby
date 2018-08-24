@@ -27,6 +27,20 @@ module V1
         present :user, user
       end
 
+      desc 'Create a Users.'
+      params do
+        requires :user, type: Hash do
+           requires :name, type: String, desc: 'User name'
+           requires :password, type: String, desc: 'Hashed password'
+        end
+      end
+      post do
+
+         user = User.create!(params[:user])
+         present :status, 201
+         present :user, user
+      end
+
     end
 
 
