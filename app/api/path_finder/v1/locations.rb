@@ -8,7 +8,20 @@ module V1
 		    get do
 		      locations = Location.all
 		      present locations
-		    end
+			end
+			
+			desc 'Delete a Location.'
+			params do
+				requires :id, type: Integer, desc: 'Location Id'
+			  
+			end
+			delete do
+  
+			   location = Location.delete(params[:id])
+
+			   present :status, 201
+			   present :location, location
+			end
 		end
 	end
 end
