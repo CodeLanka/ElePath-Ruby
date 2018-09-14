@@ -7,9 +7,9 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+## System dependencies
 
-* Configuration
+## Configuration
 
 ## Database creation
 * **Step 1:** Open database.yml in config folder and set the configurations for the database
@@ -19,9 +19,9 @@ Things you may want to cover:
 * **Step 1:** cd into the project folder
 * **Step 2:** Run the command ```$ rails db:migrate```
 
-* How to run the test suite
+## How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services (job queues, cache servers, search engines, etc.)
 
 ## Deployment instructions
 * **Step 1:** Fork form ElePath-Ruby repository and clone it to your desktop
