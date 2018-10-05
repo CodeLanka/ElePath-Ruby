@@ -23,9 +23,22 @@ Things you may want to cover:
 
 ## Services (job queues, cache servers, search engines, etc.)
 
+* mysql 5.7
+
+## Running locally with docker-compose
+
+Start the app
+```docker-compose up -d```
+
+Check logs
+```docker-compose logs```
+
+Apply database migration
+```docker-compose run --rm app rails db:create db:migrate db:seed```
+
 ## Deployment instructions
 * **Step 1:** Fork form ElePath-Ruby repository and clone it to your desktop
-* **Step 2:** Move into the cloned folder 
+* **Step 2:** Move into the cloned folder
 * **Step 3:** Deploy localy by running the command ```$ rails server```
 * **Step 3:** Go to localhost:3000 to see the app running
 

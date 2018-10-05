@@ -1,5 +1,12 @@
 version: '2'
 
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  db_data:
+
 services:
   db:
     image: mysql:5.7
@@ -7,6 +14,11 @@ services:
       - '3307:3306'
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=elepath_localdocker
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend
 
   app:
     build: .
@@ -18,4 +30,6 @@ services:
       - db
     environment:
       - RACK_ENV=localdocker
+    networks:
+      - backend
 

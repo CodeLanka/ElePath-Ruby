@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180813133633) do
 
-  create_table "elephants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "elephants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "name"
     t.integer "age"
     t.integer "height"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180813133633) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date"
     t.float "latitude", limit: 24
     t.float "longitude", limit: 24
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180813133633) do
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "name", null: false
     t.string "password"
     t.datetime "last_login"
