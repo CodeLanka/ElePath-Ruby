@@ -4,10 +4,14 @@ end
 
 5.times do
  User.create!(
- 	name: Faker::LordOfTheRings.character, 
+ 	name: Faker::Internet.email, 
  	password:Faker::Code.imei, 
  	last_login: Faker::Time.between(DateTime.now - 1, DateTime.now))
 end
+User.create!(
+name: "isuru", 
+password:"password", 
+last_login: Faker::Time.between(DateTime.now - 1, DateTime.now))
 
 elephant_ids=Elephant.ids
 user_ids=User.ids

@@ -6,11 +6,11 @@ module V1
     prefix :api
 
     resource :users do
-	  desc 'Get all users'
-	  get do
-	    users = User.all
-	    present users
-	  end
+      desc 'Get all users'
+      get do
+        users = User.all
+        present users
+      end
 
       desc 'Update User details'
         #headers: Api::Support.auth_header,
