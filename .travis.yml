@@ -1,17 +1,11 @@
 dist: trusty
 sudo: required
-
+language: generic # no ruby
 services:
   - docker
 
 env:
   - RAILS_ENV=localdocker
-
-global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-
-cache:
-  bundler: true
 
 before_script:
   - docker version
