@@ -8,14 +8,17 @@ module V1
     resource :elephants do
       desc 'Return list of elephants'
       get do
+        authenticate!
         elephants = Elephant.all
         present  elephants, with: Entities::Elephant
       end
       desc 'Return a specific Elephant'
       route_param :id do
         get do
-         elephant = Elephant.find(params[:id])
-         present elephant, with: Entities::Elephant
+          authenticate!
+
+          elephant = Elephant.find(params[:id])
+          present elephant, with: Entities::Elephant
         end
 
         resource :location do
@@ -29,6 +32,7 @@ module V1
             end
           end
           post do
+            authenticate!
 
              elephant = Elephant.find(params[:id])
              location = Location.new(params[:location])
@@ -42,8 +46,9 @@ module V1
           params do
           end
           get do
-              location = Location.where('elephant_id = :id ', id: params[:id])
-              present location, with: Entities::Location
+            authenticate!
+            location = Location.where('elephant_id = :id ', id: params[:id])
+            present location, with: Entities::Location
           end
         end
       

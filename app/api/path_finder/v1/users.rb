@@ -1,6 +1,7 @@
 
 module V1
   class Users < Grape::API
+
     version 'v1', using: :path
     format :json
     prefix :api
@@ -8,6 +9,7 @@ module V1
     resource :users do
       desc 'Get all users'
       get do
+        authenticate!
         users = User.all
         present users
       end
@@ -21,6 +23,7 @@ module V1
       end
 
       put ':id'do
+        authenticate!
         user = User.find_by_id(params[:id])
         user.update(params)
         present :status, 200
@@ -35,10 +38,11 @@ module V1
         end
       end
       post do
+        authenticate!
 
-         user = User.create!(params[:user])
-         present :status, 201
-         present :user, user
+        user = User.create!(params[:user])
+        present :status, 201
+        present :user, user
       end
 
     end

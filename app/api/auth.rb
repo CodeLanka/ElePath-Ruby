@@ -29,15 +29,8 @@ require 'bcrypt'
           #requires :token, type: String, desc: "Access token."
         end
         get :ping do   
-          if "Bearer"==/Bearer/.match(headers['Authorization'])[0]
-            token=headers['Authorization'].split(" ")[1]
-            decoded_token = JWT.decode token, ENV["SECRETKEY"], true, { algorithm: 'HS256' }
-            { token: headers['Authorization'].split(" ")[1] }
-          else
-            error!('Unauthorized.', 401)
-
-          end
-
+          authenticate!
+          { token: headers['Authorization'].split(" ")[1] }
         end
 
       end
