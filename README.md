@@ -1,3 +1,5 @@
+ <a href="https://travis-ci.com/CodeLanka/ElePath-Ruby"><img src="https://travis-ci.com/CodeLanka/ElePath-Ruby.svg?branch=master"></a>
+
 # README
 
 This README would normally document whatever steps are necessary to get the
