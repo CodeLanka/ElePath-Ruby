@@ -1,0 +1,18 @@
+dist: trusty
+sudo: required
+language: generic # no ruby
+services:
+  - docker
+
+env:
+  - RAILS_ENV=localdocker
+
+before_script:
+  - docker version
+  - docker-compose version
+  - docker-compose build
+  - docker-compose up -d
+  - docker-compose run -e "RAILS_ENV=$RAILS_ENV" app rake db:create db:migrate
+
+script:
+  - docker-compose run -e "RAILS_ENV=$RAILS_ENV" app rake test
