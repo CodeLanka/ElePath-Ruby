@@ -5,7 +5,8 @@ module V1
 		prefix :api
 		resource :locations do
 		    desc 'Return list of locations'
-		    get do
+			get do
+			  authenticate!
 		      locations = Location.all
 		      present locations
 			end
@@ -16,11 +17,10 @@ module V1
 			  
 			end
 			delete do
-  
-			   location = Location.delete(params[:id])
-
-			   present :status, 201
-			   present :location, location
+				authenticate!
+			   	location = Location.delete(params[:id])
+			   	present :status, 201
+			   	present :location, location
 			end
 		end
 	end
