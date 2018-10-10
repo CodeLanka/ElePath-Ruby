@@ -1,4 +1,5 @@
- <a href="https://travis-ci.com/CodeLanka/ElePath-Ruby"><img src="https://travis-ci.com/CodeLanka/ElePath-Ruby.svg?branch=master"></a> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/34ae4cad8535410bafc5e4c46c1e72ee)](https://www.codacy.com/app/pamuditha/ElePath-Ruby?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CodeLanka/ElePath-Ruby&amp;utm_campaign=Badge_Grade)
+<a href="https://travis-ci.com/CodeLanka/ElePath-Ruby"><img src="https://travis-ci.com/CodeLanka/ElePath-Ruby.svg?branch=master"></a> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/34ae4cad8535410bafc5e4c46c1e72ee)](https://www.codacy.com/app/pamuditha/ElePath-Ruby?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CodeLanka/ElePath-Ruby&amp;utm_campaign=Badge_Grade)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby?ref=badge_shield)
 
 # README
 
@@ -47,3 +48,7 @@ Apply database migration
 
 
 * ...
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby?ref=badge_large)
