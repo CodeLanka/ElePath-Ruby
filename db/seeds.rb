@@ -11,6 +11,7 @@ end
 User.create!(
 name: "isuru", 
 password:"password", 
+isAdmin: true,
 last_login: Faker::Time.between(DateTime.now - 1, DateTime.now))
 
 elephant_ids=Elephant.ids
