@@ -49,6 +49,5 @@ Apply database migration
 
 * ...
 
-
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby?ref=badge_large)
