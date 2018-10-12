@@ -16,7 +16,7 @@ require 'bcrypt'
           @user = User.find_by_name(params[:username].downcase)
           user_id=@user.id.to_json
           if BCrypt::Password.new(@user.password_digest)==params[:password]
-            payload={"user_id":"user_id"}
+            payload={"user_id":user_id}
             token = JWT.encode payload, ENV["SECRETKEY"], 'HS256'
             {token: token}
           else

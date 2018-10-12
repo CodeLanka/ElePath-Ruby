@@ -14,20 +14,26 @@ module V1
         present users
       end
 
-      desc 'Update User details'
-        #headers: Api::Support.auth_header,
-        #tags: [ Api::Support.set_cms_tag(namespace) ]
+      desc 'Update User details - only admins can update user data'
       params do
-	   	optional :name,         type: String,   desc: 'User name'
-	    optional :password,        type: String,   desc: 'hashed Password'
+	   	  optional :name, type: String, desc: 'User name'
+	      optional :password, type: String, desc: 'hashed Password'
       end
 
       put ':id'do
         authenticate!
-        user = User.find_by_id(params[:id])
-        user.update(params)
-        present :status, 200
-        present :user, user
+        begin
+          if User.find_by_id(current_user).isAdmin
+            user = User.find_by_id(params[:id])
+            user.update(params)
+            present :status, 200
+            present :user, user
+          else
+            error!('Unauthorized.', 401)
+          end
+        rescue
+          error!('Unauthorized.', 401)
+        end
       end
 
       desc 'Create a Users.'
