@@ -43,11 +43,9 @@ Apply database migration
 ## Deployment instructions
 * **Step 1:** Fork form ElePath-Ruby repository and clone it to your desktop
 * **Step 2:** Move into the cloned folder
-* **Step 3:** Deploy localy by running the command ```$ rails server```
-* **Step 3:** Go to localhost:3000 to see the app running
-
-
-* ...
+* **Step 3:** Download the dependencies by running the command ```$ bundle install```
+* **Step 4:** Deploy localy by running the command ```$ rails server```
+* **Step 5:** Go to localhost:3000 to see the app running
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCodeLanka%2FElePath-Ruby?ref=badge_large)
