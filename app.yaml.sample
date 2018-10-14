@@ -1,0 +1,11 @@
+runtime: ruby
+env: flex
+entrypoint: bundle exec rails server
+env_variables:
+  DB_NAME: # Put the db name here
+  DB_USER: # Put the db user IP here
+  DB_HOST: # Put the db host IP here
+  DB_PORT: # Put the db host IP here
+  DB_PASSWORD: # Put the db password here
+  SECRET_KEY_BASE: # Put the app secret key base here
+  RAILS_LOG_TO_STDOUT: true
