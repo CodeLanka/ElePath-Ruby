@@ -21,7 +21,7 @@ localdocker:
   adapter: mysql2
   database: elepath_localdocker
   username: root
-  password: 
+  password:
   host: db
 
 # Warning: The database defined as "test" will be erased and
@@ -35,5 +35,8 @@ test:
 production:
   <<: *default
   adapter: mysql2
-
-  database: db/production.sqlite3
+  database: <%= ENV.fetch("DB_NAME")  { } %>
+  username: <%= ENV.fetch("DB_USER") { } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { } %>
+  host: <%= ENV.fetch("DB_HOST") { } %>
+  port: <%= ENV.fetch("DB_PORT") { } %>
