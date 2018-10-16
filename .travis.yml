@@ -21,3 +21,8 @@ deploy:
   keyfile: "client-secret.json"
   project: "elepath-219104"
   on: master
+  
+notifications:
+  slack:
+    rooms:
+      - codelanka:t20DKGCWPBZybOLsuPcCARUI#travis-ci
