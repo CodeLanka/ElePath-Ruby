@@ -3,7 +3,7 @@ module AuthHelper
         begin  # "try" block
             if "Bearer"==/Bearer/.match(headers['Authorization'])[0]
                 token=headers['Authorization'].split(" ")[1]
-                decoded_token = JWT.decode token, ENV["SECRETKEY"], true, { algorithm: 'HS256' }
+                JWT.decode token, ENV["SECRETKEY"], true, { algorithm: 'HS256' }
             else
                 error!('Unauthorized.', 401)
             end
