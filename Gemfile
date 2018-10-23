@@ -25,7 +25,6 @@ gem 'jwt'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
-gem 'faker'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape_on_rails_routes'
@@ -42,6 +41,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
+end
+
+group :test do
+  gem 'faker', '~> 1.9.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
