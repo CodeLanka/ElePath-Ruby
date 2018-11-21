@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', 'gs://$PROJECT_ID/configs/app.yaml', '.']
+  args: ['cp', 'gs://$PROJECT_ID.appspot.com/configs/app.yaml', '.']
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
 timeout: "1600s"
